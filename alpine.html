@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Worker Demo</title>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/worker.js').then(function(registration) {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }).catch(function(err) {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    }
+  </script>
+
+  <style>
+    html {
+      font-size: 18px;
+      color: #303030;
+      background: #f3f3f3;
+      text-align: center;
+    }
+    img {
+      max-width: 600px;
+      width: 75%;
+      padding: 3px;
+      border: 1px solid #303030;
+    }
+  </style>
+
+</head>
+<body>
+  <h2>Alpine</h2>
+  <img src="alpine.jpg"/>
+  <p>A nice picture of alpine tundra at sunrise or sunset (<a href="https://unsplash.com/photos/wpMQWrjwPLs">source</a>).</p>
+<body>
+</html>
