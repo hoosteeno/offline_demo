@@ -1,18 +1,17 @@
 var myCache = "johnny";
 
-// service worker install caches index.html
+// service worker install caches alpine.html
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(myCache).then(function(cache) {
-      return cache.addAll([ 'alpine.html' ]);
+      return cache.addAll([ 'alpine.html', 'present_alpine.jpg' ]);
     })
   );
 });
 
 // worker activation invalidates old caches
 self.addEventListener('activate', function(event) {
-
-  var keptCaches = [myCache];
+  var keptCaches = [];
 
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
